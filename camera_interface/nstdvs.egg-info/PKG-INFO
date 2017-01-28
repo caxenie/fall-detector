@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: nstdvs
+Version: 0.1
+Summary: Controlling and data acquisition from NST DVS spiking cameras.
+Home-page: UNKNOWN
+Author: CNRGlab at UWaterloo && NST TU Munich
+Author-email: tcstewar@uwaterloo.ca, cristian.axenie@tum.de
+License: UNKNOWN
+Description: dvslib
+        ======
+        
+        Python library for controlling and data acquisition for DVS spiking camera from NST TU Munich.
+        
+        
+Platform: UNKNOWN
+Requires: numpy
+Requires: matplotlib
+Requires: scipy
+Requires: scipy
+Requires: pyaudio
