@@ -1,5 +1,7 @@
 import numpy as np
 import time
+import math
+import csv
 import nstdvs
 # encode the values in the [-1 1]
 def tracker():
@@ -23,9 +25,24 @@ dvs_brd.track_frequencies([200, 1000])
 dvs_brd.retina(True)
 dvs_brd.show_image()
 
+def calculateSin(x1, y1, x2, y2):
+    numerator = abs(y2 - y1)
+    nominator = math.sqrt((x1 - x2)**2 + (y1 - y2)**2)
+    sin_alpha = numerator / nominator
+
+    if sin_alpha > sqrt(2)/2:
+        return 'NF'
+    
+    return 'F'
+
 while True:
     # get the position of the tracked stimulus
     target_stim = np.array(tracker())
+    result = calculateSin(target_stim[0], target_stim[1], target_stim[2], target_stim[3])
+    with open('sensor_results_data.csv', 'w', newline='') as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        spamwriter.writerow([target_stim[0], target_stim[1], target_stim[2], target_stim[3]] + [result])
+    
     print target_stim
     # processing delay
     time.sleep(0.2)
