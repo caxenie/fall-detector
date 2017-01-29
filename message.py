@@ -7,7 +7,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def notify():  
+def notify(mobile_no, email_id):  
 	''' 
 	function to notify the emergency contact that the person has fallen down
 	notification done via SMS and email 
@@ -23,7 +23,7 @@ def notify():
 	try: 
 	    message = client.messages.create(
 		    body="A fall has been detected!",
-	        to="+447599463432",    
+	        to=mobile_no,    
 	        from_="+441133207644") 
 
 	except TwilioRestException as e: 
@@ -33,13 +33,12 @@ def notify():
 	#email login credentials
 	me = "neuralfalldetector@gmail.com"
 	my_password = "neuralfall2017" # might need 'r' prefix 
-	you = "markmathews212@gmail.com"
 
 	#message details
 	msg = MIMEMultipart('alternative')
 	msg['Subject'] = "Alert"
 	msg['From'] = me
-	msg['To'] = you
+	msg['To'] = email_id
 
 	html = '<html><body><p>A fall has been detected!</p></body></html>'
 	part2 = MIMEText(html, 'html')
@@ -49,7 +48,9 @@ def notify():
 	#server to send email
 	s = smtplib.SMTP_SSL('smtp.gmail.com') 
 	s.login(me, my_password)
-	s.sendmail(me, you, msg.as_string())
+	s.sendmail(me, email_id, msg.as_string())
 	s.quit()
+
+
 
 
