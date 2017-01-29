@@ -5,13 +5,12 @@ import requests
 #TO BE DONE 
 
 def make_request(mode): 
-	payload = {'key1': 'value1', 'key2': 'value2'}
-	r = requests.post('http://httpbin.org/get', params=payload)
-	print(r.url)
-	#TO BE CONT.  
-
 	if mode == 'run':
-		print('run')
+	   print('run')	
+	   payload = {'key1': 'value1', 'key2': 'value2'}
+	   r = requests.post('http://httpbin.org/get', params=payload)
+	   print(r.url)
+	   #TO BE CONT.  
 	elif mode == 'learn': 
 		#More code... else: 
 		print('learn')
