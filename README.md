@@ -24,9 +24,9 @@ setup. This project investigates how can we exploit the eDVS fast response time 
 in making decisions about elderly motion. 
 
 The computation backend will be realized with a neural network classificator to detect fall and filter outliers. The data will
-be provided from 3 stimuli (blinking LEDs at different frequencies) and will represent the actual position of the person wearing them.
+be provided from 2 stimuli (blinking LEDs at different frequencies) and will represent the actual position of the person wearing them.
 The changes in position of the stimuli will encode the possible positions corresponding to falls or normal cases. 
 
-We will use Microsoft Azure ML Studio to implement a MLP binary classifier for the 6 (3 stimuli x 2 Cartesian coordinates - (x,y) in the field of view) dimensional input. We labelled the data with Fall (F) and No Fall (NF).
+We will use Microsoft Azure ML Studio to implement a MLP binary classifier for the 4 (2 stimuli x 2 Cartesian coordinates - (x,y) in the field of view) dimensional input. We labelled the data with Fall (F) and No Fall (NF).
 
 
