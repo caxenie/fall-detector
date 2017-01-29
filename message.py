@@ -52,4 +52,4 @@ def notify():
 	s.sendmail(me, you, msg.as_string())
 	s.quit()
 
-notify()
+
