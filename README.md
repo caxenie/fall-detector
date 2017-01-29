@@ -4,9 +4,9 @@ Hack Cambridge 2017
 Real-time Event-based Monitoring System for Seniors and Elderly using Neural Networks
 
 Team:
-Cristian Axenie
-Simeon Kostadinov
-Mark Mathews
+Cristian Axenie, Simeon Kostadinov, Mark Mathews
+
+![system](media/fallcam.jpg)
 
 It has been estimated that 33% of people age 65 will fall. At around 80, that increases to 50%. In
 case of a fall, seniors who receive help within an hour have a better rate of survival and, the faster
