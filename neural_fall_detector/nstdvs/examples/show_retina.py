@@ -41,7 +41,7 @@ def calculateSin(x1, y1, x2, y2):
 
 fall_ctr = 0
 notif_threshold = 15
-time_moving = 360
+time_moving = 500
 spamwriter = csv.writer(open('sensor_results_data.csv', 'a') , delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 spamwriter.writerow( ('xt', 'yt', 'xb', 'yb' , 'state') )
 mode = sys.argv[1]
@@ -55,7 +55,7 @@ while True:
 	time_moving = time_moving - 1
 	if time_moving <= 0:
 		sys.exit()
-	time.sleep(0.5)
+	time.sleep(0.2)
     else:
 	# get the position of the tracked stimulus
 	target_stim = np.array(tracker())
