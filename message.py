@@ -7,6 +7,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+
 def notify(mobile_no, email_id, location):  
 	''' 
 	function to notify the emergency contact that the person has fallen down
