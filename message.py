@@ -7,7 +7,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def notify(mobile_no, email_id):  
+def notify(mobile_no, email_id, location):  
 	''' 
 	function to notify the emergency contact that the person has fallen down
 	notification done via SMS and email 
@@ -22,7 +22,7 @@ def notify(mobile_no, email_id):
 	#Send SMS 
 	try: 
 	    message = client.messages.create(
-		    body="A fall has been detected!",
+		    body="A fall has been detected at " + location + "!",
 	        to=mobile_no,    
 	        from_="+441133207644") 
 
@@ -40,7 +40,7 @@ def notify(mobile_no, email_id):
 	msg['From'] = me
 	msg['To'] = email_id
 
-	html = '<html><body><p>A fall has been detected!</p></body></html>'
+	html = '<html><body><p>A fall has been detected at ' + location + '!</p></body></html>'
 	part2 = MIMEText(html, 'html')
 
 	msg.attach(part2)
